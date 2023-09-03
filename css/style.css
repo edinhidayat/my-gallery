@@ -1,0 +1,196 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav.navbar {
+  width: 100%;
+  height: 74px;
+  border: 1px solid black;
+}
+.lingkaran {
+  width: 50px;
+  height: 50px;
+  top: 14px;
+  margin-left: 35px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+.kotak {
+  display: inline-block;
+  width: 100px;
+  height: 32px;
+  top: 21px;
+  margin-right: 18px;
+  background-color: #d9d9d9;
+}
+.togle {
+  display: inline-block;
+}
+.strip-togle {
+  width: 34px;
+  height: 6px;
+  top: 24px;
+  margin-bottom: 4px;
+  background-color: #d9d9d9;
+}
+
+/* HEADER / JUDUL */
+.header {
+  width: fit-content;
+  padding: 10px;
+  margin: 80px auto;
+  border: 1px solid black;
+}
+
+/* KONTEN */
+.content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.gambar {
+  height: 139px;
+  border: 1px solid #000000;
+}
+.gambar.img1,
+.gambar.img3 {
+  width: 37%;
+}
+.gambar.img2 {
+  width: 26%;
+}
+.gambar.img4 {
+  height: 210px;
+  width: 100%;
+}
+.gambar.img5,
+.gambar.img6 {
+  width: 50%;
+}
+.gambar.img7,
+.gambar.img8,
+.gambar.img9,
+.gambar.img10,
+.gambar.img11 {
+  width: 20%;
+}
+
+/* GALLERY */
+a.gambar {
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  margin: -30px auto;
+}
+img.gb4 {
+  margin: -230px auto;
+}
+img.gb5,
+img.gb6 {
+  margin: -100px auto;
+}
+
+/* HOVER */
+a.gambar {
+  transition: 0.3s;
+}
+a.gambar:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+
+/* PREVIEW / TAMPIL */
+img.gb-tampil,
+a.close,
+.deskripsi,
+.navigasi-kanan .navigasi,
+.navigasi-kiri .navigasi {
+  display: none;
+}
+
+.tampil:target {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: 0.5s;
+}
+.tampil:target img.gb-tampil {
+  display: block;
+  width: 100%;
+}
+.tampil:target a.close {
+  position: absolute;
+  display: block;
+  font-size: xx-large;
+  color: black;
+  text-decoration: none;
+  right: 25px;
+  top: 5px;
+  opacity: 0;
+}
+.tampil:target .deskripsi {
+  position: relative;
+  width: 60%;
+  margin: 80px auto;
+  display: block;
+  background-color: white;
+}
+.tampil:target .deskripsi .kotak-putih {
+  position: absolute;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  height: 30%;
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+  border-top-left-radius: 70px;
+}
+.tampil:target .navigasi-kanan .navigasi {
+  position: absolute;
+  display: block;
+  width: 3%;
+  top: 350px;
+  right: 25px;
+  opacity: 0;
+}
+.tampil:target .navigasi-kiri .navigasi {
+  position: absolute;
+  display: block;
+  width: 3%;
+  top: 350px;
+  left: 25px;
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.tampil:target .deskripsi {
+  animation: fadeBiasa 0.5s forwards;
+}
+.tampil:target .close,
+.tampil:target .navigasi-kanan .navigasi,
+.tampil:target .navigasi-kiri .navigasi,
+.tampil:target .navigasi-kiri .navigasi {
+  animation: fadeBiasa 0.3s 0.5s forwards;
+}
+
+@keyframes fadeBiasa {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
